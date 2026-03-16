@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
-from functions.downlaod_api import download_audio_api
+from downlaod_api import download_audio_api
 
 app = FastAPI()
 
