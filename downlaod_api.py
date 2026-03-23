@@ -14,6 +14,7 @@ def download_audio_api(link: str):
         tmpfile.close()
 
         ydl_opts = {
+            'cookiefile': 'cookies.txt',
             'format': 'bestaudio/best',
             'outtmpl': tmp_filename + '.%(ext)s',  # Add extension placeholder
         }
