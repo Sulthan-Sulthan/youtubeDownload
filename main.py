@@ -1,6 +1,6 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
-from downlaod_api import download_audio_api
+from functions.downlaod_api import download_audio_api, download_video_api
 
 app = FastAPI()
 
@@ -16,3 +16,10 @@ app.add_middleware(
 @app.get("/download")
 def download_audio(link: str = Query(...)):
     return download_audio_api(link)
+
+@app.get("/download-video")
+def download_video(link: str = Query(...), background_tasks: BackgroundTasks = BackgroundTasks()):
+    return download_video_api(link, background_tasks)
+
+
+    # run cmd  ------------>  uvicorn main:app --reload --port 8080
