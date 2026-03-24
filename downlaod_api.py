@@ -66,6 +66,7 @@ def iterfile_and_delete(file_path):
 def download_video_api(link: str):
     try:
         ydl_opts = {
+            'cookiefile': 'cookies.txt',
             'format': 'bestvideo+bestaudio/best',
             'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s.%(ext)s',
             'merge_output_format': 'mp4',
