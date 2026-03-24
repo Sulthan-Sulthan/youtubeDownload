@@ -67,7 +67,7 @@ def download_video_api(link: str):
     try:
         ydl_opts = {
             'cookiefile': 'cookies.txt',
-            'format': 'bestvideo+bestaudio/best',
+            'format': 'best[ext=mp4]/best'
             'outtmpl': f'{DOWNLOAD_FOLDER}/%(title)s.%(ext)s',
             'merge_output_format': 'mp4',
             'restrictfilenames': True,
