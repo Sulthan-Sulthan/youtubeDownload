@@ -57,7 +57,6 @@ def iterfile_and_delete(file_path):
             while chunk := f.read(1024 * 1024):
                 yield chunk
     finally:
-        # 🔥 delete after streaming completes
         try:
             os.remove(file_path)
         except:
